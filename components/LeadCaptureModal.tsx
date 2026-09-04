@@ -25,6 +25,8 @@ export default function LeadCaptureModal({ isOpen, onClose, baseTier, priceRange
     data._subject = "New Lead from Pricing Builder";
     if (baseTier) data.Tier = baseTier;
     if (priceRange) data.EstPrice = `$${priceRange.low} - $${priceRange.high}`;
+    
+    data._autoresponse = "Hi there,\n\nThank you for reaching out to Digital Growth Engine! We have received your request and our team is currently reviewing your details. One of our growth analysts will contact you shortly to confirm your customized plan.\n\nBest,\nThe Digital Growth Engine Team";
 
     fetch("https://formsubmit.co/ajax/digigrowthengine@gmail.com", {
       method: "POST",
@@ -144,7 +146,6 @@ export default function LeadCaptureModal({ isOpen, onClose, baseTier, priceRange
                       <select
                         id="modalBusinessType"
                         name="businessType"
-                        required
                         value={businessType}
                         onChange={(e) => setBusinessType(e.target.value)}
                         className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all bg-white"
@@ -169,18 +170,18 @@ export default function LeadCaptureModal({ isOpen, onClose, baseTier, priceRange
                         >
                           <div>
                             <label htmlFor="modalWebsite" className="block text-sm font-medium text-slate-700 mb-1">Website URL</label>
-                            <input type="url" name="website" id="modalWebsite" required className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all" placeholder="https://yourwebsite.com" />
+                            <input type="url" name="website" id="modalWebsite" className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all" placeholder="https://yourwebsite.com" />
                           </div>
                           
                           <div>
                             <label htmlFor="modalIg" className="block text-sm font-medium text-slate-700 mb-1">Instagram Handle</label>
-                            <input type="text" name="instagram" id="modalIg" required className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all" placeholder="@yourbusiness" />
+                            <input type="text" name="instagram" id="modalIg" className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all" placeholder="@yourbusiness" />
                           </div>
 
                           {['restaurant', 'gym', 'retail', 'other'].includes(businessType) && (
                             <div>
                               <label htmlFor="modalAddress" className="block text-sm font-medium text-slate-700 mb-1">Physical Address</label>
-                              <input type="text" name="address" id="modalAddress" required className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all" placeholder="123 Main St, City, ST" />
+                              <input type="text" name="address" id="modalAddress" className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all" placeholder="123 Main St, City, ST" />
                             </div>
                           )}
                         </motion.div>
@@ -193,7 +194,6 @@ export default function LeadCaptureModal({ isOpen, onClose, baseTier, priceRange
                       </label>
                       <select
                         id="bottleneck"
-                        required
                         className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all bg-white"
                       >
                         <option value="" disabled selected>Select an option...</option>

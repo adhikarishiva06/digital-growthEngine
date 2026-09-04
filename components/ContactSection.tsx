@@ -17,6 +17,7 @@ export default function ContactSection() {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
     data._subject = "New Lead from Contact Form";
+    data._autoresponse = "Hi there,\n\nThank you for reaching out to Digital Growth Engine! We have received your inquiry. One of our growth analysts will be in touch with you shortly to schedule a quick chat.\n\nBest,\nThe Digital Growth Engine Team";
 
     fetch("https://formsubmit.co/ajax/digigrowthengine@gmail.com", {
       method: "POST",
@@ -74,7 +75,7 @@ export default function ContactSection() {
                   <Mail className="w-5 h-5 text-purple-600" />
                 </div>
                 <div>
-                  <a href="mailto:digigrowthengine@gmail.com" className="text-lg font-bold text-slate-900 hover:text-purple-600 transition-colors">digigrowthengine@gmail.com</a>
+                  <a href="mailto:digigrowthengine@gmail.com" className="text-lg font-bold text-slate-900 hover:text-purple-600 transition-colors break-all">digigrowthengine@gmail.com</a>
                 </div>
               </div>
 
@@ -90,7 +91,7 @@ export default function ContactSection() {
 
             <div className="bg-purple-100/50 border border-purple-200 rounded-xl p-5 inline-block">
               <p className="text-sm text-purple-900 font-medium">
-                💡 <strong className="font-bold">Pro Tip:</strong> Already know what you need? Use the <a href="#pricing-builder" className="underline hover:text-purple-700 font-bold">Pricing Builder</a> above to request a custom diagnostic instantly.
+                💡 <strong className="font-bold">Pro Tip:</strong> Already know what you need? Use the <a href="#pricing-builder" className="underline hover:text-purple-700 font-bold">diagnostic</a> above to request a custom proposal instantly.
               </p>
             </div>
           </motion.div>
@@ -133,17 +134,17 @@ export default function ContactSection() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <label htmlFor="firstName" className="text-sm font-semibold text-slate-700">First Name</label>
-                    <input required type="text" id="firstName" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="John" />
+                    <input required type="text" id="firstName" name="firstName" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="John" />
                   </div>
                   <div className="space-y-1.5">
                     <label htmlFor="lastName" className="text-sm font-semibold text-slate-700">Last Name</label>
-                    <input required type="text" id="lastName" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="Doe" />
+                    <input type="text" id="lastName" name="lastName" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="Doe" />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
                   <label htmlFor="email" className="text-sm font-semibold text-slate-700">Work Email</label>
-                  <input required type="email" id="email" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="john@yourbusiness.com" />
+                  <input required type="email" id="email" name="email" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="john@yourbusiness.com" />
                 </div>
 
                 <div className="space-y-1.5">
@@ -156,7 +157,6 @@ export default function ContactSection() {
                   <select
                     id="businessType"
                     name="businessType"
-                    required
                     value={businessType}
                     onChange={(e) => setBusinessType(e.target.value)}
                     className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-slate-700"
@@ -181,18 +181,18 @@ export default function ContactSection() {
                     >
                       <div className="space-y-1.5">
                         <label htmlFor="website" className="text-sm font-semibold text-slate-700">Website URL</label>
-                        <input type="url" name="website" id="website" required className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="https://yourwebsite.com" />
+                        <input type="url" name="website" id="website" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="https://yourwebsite.com" />
                       </div>
                       
                       <div className="space-y-1.5">
                         <label htmlFor="ig" className="text-sm font-semibold text-slate-700">Instagram Handle</label>
-                        <input type="text" name="instagram" id="ig" required className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="@yourbusiness" />
+                        <input type="text" name="instagram" id="ig" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="@yourbusiness" />
                       </div>
 
                       {['restaurant', 'gym', 'retail', 'other'].includes(businessType) && (
                         <div className="space-y-1.5">
                           <label htmlFor="address" className="text-sm font-semibold text-slate-700">Physical Address (For Local SEO)</label>
-                          <input type="text" name="address" id="address" required className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="123 Main St, City, ST" />
+                          <input type="text" name="address" id="address" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all" placeholder="123 Main St, City, ST" />
                         </div>
                       )}
                     </motion.div>
@@ -204,7 +204,6 @@ export default function ContactSection() {
                   <select 
                     id="bottleneck" 
                     name="bottleneck"
-                    required
                     value={bottleneck}
                     onChange={(e) => setBottleneck(e.target.value)}
                     className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-slate-700"
@@ -230,7 +229,6 @@ export default function ContactSection() {
                       <textarea 
                         id="otherDetails" 
                         name="otherDetails"
-                        required 
                         maxLength={500}
                         rows={3}
                         value={otherText}

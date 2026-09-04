@@ -11,9 +11,9 @@ const dashboardData = {
     icon: TrendingUp,
     color: "purple",
     stats: [
-      { label: "Organic Traffic", value: "24.5K", badge: "+312%", badgeColor: "bg-green-100 text-green-700" },
-      { label: "Map Pack Rank", value: "Top 3", badge: "Target Hit", badgeColor: "bg-purple-100 text-purple-700" },
-      { label: "Inbound Leads", value: "84", badge: "+145%", badgeColor: "bg-green-100 text-green-700" }
+      { label: "Local Reach / Month", value: "24.5K", badge: "+312% Lead Volume (Fitness)", badgeColor: "bg-green-100 text-green-700" },
+      { label: "Google Map Pack Ranking", value: "Top 3", badge: "Target Hit", badgeColor: "bg-purple-100 text-purple-700" },
+      { label: "Inbound Leads", value: "84", badge: "+145% Search Visibility (90d)", badgeColor: "bg-green-100 text-green-700" }
     ],
     chartTitle: "Search Visibility Trajectory",
     chartPath: "M0,90 Q30,85 50,60 T100,10"

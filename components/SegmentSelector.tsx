@@ -67,7 +67,7 @@ const segments = [
   },
   {
     id: "educators",
-    name: "High-Ticket Educators",
+    name: "High-Ticket Coaching / Consulting",
     icon: GraduationCap,
     valueProp: "Position yourself as the undisputed authority. We build SEO-driven content funnels and targeted social authority plays to fill your premium courses.",
     ig: {
@@ -104,7 +104,7 @@ export default function SegmentSelector() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+        <div className="grid grid-cols-4 gap-2 md:gap-4 max-w-4xl mx-auto mb-12">
           {segments.map((segment) => {
             const Icon = segment.icon;
             const isActive = activeSegment === segment.id;
@@ -115,14 +115,14 @@ export default function SegmentSelector() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setActiveSegment(segment.id)}
-                className={`p-6 rounded-2xl border transition-all flex flex-col items-center justify-center gap-3 text-center ${
+                className={`p-2 sm:p-4 md:p-6 rounded-xl md:rounded-2xl border transition-all flex flex-col items-center justify-start md:justify-center gap-1.5 md:gap-3 text-center ${
                   isActive 
                     ? "bg-purple-600 border-purple-600 text-white shadow-md shadow-purple-600/20" 
                     : "bg-white border-slate-200 text-slate-600 hover:border-purple-300 hover:bg-purple-50"
                 }`}
               >
-                <Icon className={`w-8 h-8 ${isActive ? "text-white" : "text-purple-600"}`} />
-                <span className="font-medium">{segment.name}</span>
+                <Icon className={`w-5 h-5 md:w-8 md:h-8 shrink-0 ${isActive ? "text-white" : "text-purple-600"}`} />
+                <span className="font-medium text-[9px] sm:text-xs md:text-base leading-tight break-words hyphens-auto">{segment.name}</span>
               </motion.button>
             );
           })}
@@ -137,11 +137,11 @@ export default function SegmentSelector() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
-                className="bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden flex flex-col md:flex-row"
+                className="bg-white rounded-2xl border-2 border-purple-200 shadow-xl shadow-purple-900/5 overflow-hidden flex flex-col md:flex-row"
               >
                 {/* Left Side: Text & Value Prop */}
                 <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center bg-purple-50/50">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                  <div className="hidden md:flex w-12 h-12 bg-purple-100 rounded-xl items-center justify-center mb-6">
                     <activeData.icon className="w-6 h-6 text-purple-600" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">{activeData.name} Growth Plan</h3>
