@@ -10,7 +10,7 @@ const results = [
     metricLabel: "Increase in Lead Volume",
     icon: Users,
     timeline: "120 Days",
-    story: "This boutique gym was relying entirely on foot traffic. We implemented a localized Meta Ads strategy combined with a lead-nurture email sequence. They maxed out their class capacity in 4 months.",
+    story: "A premium boutique fitness studio was relying entirely on unpredictable foot traffic. We implemented a hyper-localized Meta Ads strategy combined with a behavioral lead-nurture email sequence, maxing out their class capacity in under 4 months.",
     color: "pink"
   },
   {
@@ -19,7 +19,7 @@ const results = [
     metricLabel: "Return on Ad Spend (ROAS)",
     icon: TrendingUp,
     timeline: "6 Months",
-    story: "A business coach selling a $5k program was burning cash on broad targeting. We completely rebuilt their funnel, tightened their ad targeting, and dialed in their email automation.",
+    story: "A high-ticket business coach selling a $5k program was burning cash on broad, unqualified ad targeting. We completely rebuilt the acquisition funnel, tightened audience parameters, and implemented sophisticated email automation to qualify leads.",
     color: "blue"
   },
   {
@@ -28,7 +28,7 @@ const results = [
     metricLabel: "Google Map Pack Ranking",
     icon: MapPin,
     timeline: "45 Days",
-    story: "Hidden on page 3 of local search results, this restaurant was invisible to tourists. We completely overhauled their Local SEO profile and citation consistency, resulting in a massive surge in weekend reservations.",
+    story: "Hidden on page 3 of local search results, a highly-rated local restaurant was virtually invisible to out-of-town tourists. We overhauled their Local SEO profile and citation consistency, driving a massive, sustained surge in weekend reservations.",
     color: "purple"
   }
 ];

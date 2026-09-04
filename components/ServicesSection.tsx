@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, MapPin, Target, Mail, CheckCircle2 } from "lucide-react";
+import { Smartphone, MapPin, Target, Mail, CheckCircle2, Bot } from "lucide-react";
 
 const services = [
   {
@@ -10,7 +10,7 @@ const services = [
     title: "Social Media Management",
     description: "We handle your posts, videos, and comments. We keep your pages active so you can focus on running your business.",
     icon: Smartphone,
-    problem: "You are inconsistent, your content looks amateur, and managing it drains time you should be spending on your actual business.",
+    problem: "Posting consistently while running the business itself is hard, most owners fall behind, and it shows.",
     decisionPoints: [
       { title: "Time Reclaimed", detail: "How many hours a week do you waste stressing over what to post? We buy back your time." },
       { title: "Brand Perception", detail: "People look you up before they visit. If your page looks dead, they go to your competitor. We make you look like the premium option." },
@@ -30,6 +30,18 @@ const services = [
     ]
   },
   {
+    id: "ai-seo",
+    title: "AI SEO",
+    description: "We optimize your content for AI search engines like ChatGPT and Google SGE so you dominate the future of search.",
+    icon: Bot,
+    problem: "Traditional search is changing. Customers are asking AI for recommendations, and your business isn't showing up in the answers.",
+    decisionPoints: [
+      { title: "Future-Proof Visibility", detail: "We ensure your business is the one cited when potential customers ask ChatGPT or Perplexity for local recommendations." },
+      { title: "AI Authority Building", detail: "AI models trust strong, authoritative signals. We feed the models exactly what they need to rank your business as the top local expert." },
+      { title: "Search Generative Experience", detail: "Google's SGE pushes standard links down. We structure your content to appear directly inside the AI-generated summaries at the very top." }
+    ]
+  },
+  {
     id: "paid-ads",
     title: "Paid Ads",
     description: "We run smart ads on Google and Meta (Facebook & Instagram) to bring you new customers quickly and safely.",
@@ -46,7 +58,7 @@ const services = [
     title: "Email Marketing",
     description: "We send helpful, friendly emails to your list so your past customers keep coming back for more.",
     icon: Mail,
-    problem: "You are ignoring your most valuable asset—your past customers—and leaving massive amounts of repeat business on the table.",
+    problem: "You are ignoring your most valuable asset, your past customers, and leaving massive amounts of repeat business on the table.",
     decisionPoints: [
       { title: "Owned Audience", detail: "You don't own your Instagram followers; Mark Zuckerberg does. You own your email list. It's the only algorithm-proof marketing channel." },
       { title: "Highest ROI Channel", detail: "It costs 5x more to acquire a new customer than to retain an existing one. Email marketing is the cheapest way to get past customers to buy again." },
@@ -68,11 +80,11 @@ export default function ServicesSection() {
             What We Do
           </h2>
           <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-            Simple, effective marketing to help your business grow. Click a service below to see exactly why it's a game-changer.
+            Simple, effective marketing to help your business grow. Click a service below to see exactly what it fixes.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+        <div className="grid grid-cols-5 gap-1.5 sm:gap-2 md:gap-6 max-w-6xl mx-auto mb-12">
           {services.map((service, index) => {
             const Icon = service.icon;
             const isActive = activeService === service.id;
@@ -84,28 +96,22 @@ export default function ServicesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 onClick={() => setActiveService(isActive ? null : service.id)}
-                className={`text-left p-8 rounded-2xl transition-all cursor-pointer outline-none ${
+                className={`p-1.5 sm:p-4 md:p-8 rounded-xl md:rounded-2xl transition-all cursor-pointer outline-none flex flex-col items-center justify-start md:justify-center gap-1.5 md:gap-4 text-center ${
                   isActive 
-                    ? "bg-purple-600 border-purple-600 shadow-xl shadow-purple-600/20 text-white transform -translate-y-2" 
-                    : "bg-slate-50 border border-slate-200 hover:border-purple-300 hover:bg-purple-50 text-slate-900"
+                    ? "bg-purple-600 border-2 border-purple-600 shadow-xl shadow-purple-600/20 text-white md:transform md:-translate-y-2" 
+                    : "bg-slate-50 border-2 border-slate-200 hover:border-purple-300 hover:bg-purple-50 text-slate-900"
                 }`}
               >
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors ${
+                <div className={`w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-lg md:rounded-xl flex items-center justify-center shrink-0 transition-colors ${
                   isActive ? "bg-white/20" : "bg-purple-100"
                 }`}>
-                  <Icon className={`w-7 h-7 transition-colors ${
+                  <Icon className={`w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7 transition-colors ${
                     isActive ? "text-white" : "text-purple-600"
                   }`} />
                 </div>
-                <h3 className={`text-xl font-bold mb-3 ${isActive ? "text-white" : "text-slate-900"}`}>
+                <h3 className={`font-bold text-[8px] sm:text-[10px] md:text-lg leading-tight break-words hyphens-auto ${isActive ? "text-white" : "text-slate-900"}`}>
                   {service.title}
                 </h3>
-                <p className={`leading-relaxed text-sm ${isActive ? "text-purple-50" : "text-slate-600"}`}>
-                  {service.description}
-                </p>
-                <div className={`mt-4 text-sm font-semibold flex items-center ${isActive ? "text-white" : "text-purple-600"}`}>
-                  {isActive ? "Close Details" : "See Why You Need This"}
-                </div>
               </motion.button>
             );
           })}
@@ -134,7 +140,7 @@ export default function ServicesSection() {
                       </div>
                       <h4 className="text-xl font-bold text-slate-900 mb-4">{activeData.title}</h4>
                       <p className="text-slate-600 leading-relaxed border-l-4 border-red-200 pl-4 italic text-sm">
-                        "{activeData.problem}"
+                        {activeData.problem}
                       </p>
                     </div>
 
