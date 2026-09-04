@@ -132,10 +132,11 @@ export default function CustomQuoteBuilder() {
 
     const payload = {
       _subject: `New Custom Quote Request from ${contactInfo.name}`,
-      Name: contactInfo.name,
-      Email: contactInfo.email,
-      Phone: contactInfo.phone,
-      Business: contactInfo.business,
+      _autoresponse: "Hi there,\n\nThank you for building a custom package with Digital Growth Engine! We have received your custom quote request. Our team is reviewing your selected deliverables and will reach out shortly to discuss the next steps.\n\nBest,\nThe Digital Growth Engine Team",
+      name: contactInfo.name,
+      email: contactInfo.email,
+      phone: contactInfo.phone,
+      business: contactInfo.business,
       Configuration: formattedOrder,
     };
 

@@ -32,11 +32,11 @@ export default function HowWeHelpSection() {
     <section className="py-20 bg-slate-50 border-t border-slate-200">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
             The Results You Can Expect
           </h2>
-          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-            We don't just post for the sake of posting. Our proprietary system is engineered to deliver three core business outcomes for your agency or local business.
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Everything we do comes back to three things: more people finding you, more people trusting you, and more of them buying.
           </p>
         </div>
 

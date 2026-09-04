@@ -36,6 +36,7 @@ export default function Navbar() {
                 >
                   <a href="/#services" className="block px-4 py-2 hover:bg-purple-50 hover:text-purple-600 transition-colors">Social Media Management</a>
                   <a href="/#services" className="block px-4 py-2 hover:bg-purple-50 hover:text-purple-600 transition-colors">Local SEO</a>
+                  <a href="/#services" className="block px-4 py-2 hover:bg-purple-50 hover:text-purple-600 transition-colors">AI SEO</a>
                   <a href="/#services" className="block px-4 py-2 hover:bg-purple-50 hover:text-purple-600 transition-colors">Paid Ads (Meta/Google)</a>
                   <a href="/#services" className="block px-4 py-2 hover:bg-purple-50 hover:text-purple-600 transition-colors">Email Marketing</a>
                   <div className="border-t border-slate-100 my-1"></div>
@@ -53,7 +54,7 @@ export default function Navbar() {
             }}
             className="bg-purple-600 text-white px-5 py-2 rounded-full hover:bg-purple-700 transition-colors font-semibold shadow-md shadow-purple-600/20"
           >
-            Get Quotes
+            Get My Diagnostic
           </button>
         </div>
 
@@ -81,6 +82,7 @@ export default function Navbar() {
                 <div className="pl-4 space-y-2 flex flex-col">
                   <a href="/#services" className="hover:text-purple-600 p-2" onClick={() => setIsMobileMenuOpen(false)}>Social Media Management</a>
                   <a href="/#services" className="hover:text-purple-600 p-2" onClick={() => setIsMobileMenuOpen(false)}>Local SEO</a>
+                  <a href="/#services" className="hover:text-purple-600 p-2" onClick={() => setIsMobileMenuOpen(false)}>AI SEO</a>
                   <a href="/#services" className="hover:text-purple-600 p-2" onClick={() => setIsMobileMenuOpen(false)}>Paid Ads (Meta/Google)</a>
                   <a href="/#services" className="hover:text-purple-600 p-2" onClick={() => setIsMobileMenuOpen(false)}>Email Marketing</a>
                   <div className="border-t border-slate-100 my-1"></div>
@@ -97,7 +99,7 @@ export default function Navbar() {
                 }}
                 className="w-full bg-purple-600 text-white px-5 py-3 rounded-xl hover:bg-purple-700 transition-colors font-semibold"
               >
-                Get Quotes
+                Get My Diagnostic
               </button>
             </div>
           </motion.div>
