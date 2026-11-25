@@ -75,7 +75,7 @@ export default function ContactSection() {
                   <Mail className="w-5 h-5 text-purple-600" />
                 </div>
                 <div>
-                  <a href="mailto:digigrowthengine@gmail.com" className="text-lg font-bold text-slate-900 hover:text-purple-600 transition-colors break-all">digigrowthengine@gmail.com</a>
+                  <a href="mailto:hello@digigrowthengine.com" className="text-lg font-bold text-slate-900 hover:text-purple-600 transition-colors break-all">hello@digigrowthengine.com</a>
                 </div>
               </div>
 
