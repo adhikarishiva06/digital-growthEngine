@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DigitalGrowthEngine",
+  title: "Digi Growth Engine",
   description: "Data-driven marketing and growth strategies for your business.",
 };
 
